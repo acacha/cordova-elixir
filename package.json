@@ -19,7 +19,12 @@
     "elixir",
     "jquery",
     "vue.js",
-    "Bootstrap"
+    "bootstrap",
+    "webpack",
+    "gulp",
+    "vue",
+    "vue-resource",
+    "vue-router"
   ],
   "author": "Sergi Tur",
   "license": "Apache-2.0"
