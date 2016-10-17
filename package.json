@@ -1,0 +1,26 @@
+{
+  "name": "cordova-elixir",
+  "version": "1.0.0",
+  "description": "A cordova template with Laravel Elixir",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acacha/cordova-elixir.git"
+  },
+  "homepage": "https://github.com/acacha/cordova-elixir",
+  "keywords": [
+    "ecosystem:cordova",
+    "ecosystem:vue",
+    "cordova:template",
+    "laravel",
+    "elixir",
+    "jquery",
+    "vue.js",
+    "Bootstrap"
+  ],
+  "author": "Sergi Tur",
+  "license": "Apache-2.0"
+}
