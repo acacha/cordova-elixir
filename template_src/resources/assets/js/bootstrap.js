@@ -8,7 +8,8 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
-require('bootstrap-sass');
+
+// require('bootstrap-sass');
 
 var Cookies = require('js-cookie');
 

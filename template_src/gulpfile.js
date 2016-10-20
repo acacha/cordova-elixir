@@ -17,5 +17,9 @@ elixir.config.publicPath = 'www';
 
 elixir(mix => {
     mix.sass('app.scss')
-    .webpack('app.js');
+        .webpack('app.js')
+        .styles([
+            './www/css/app.css',
+            'cordova.css'
+        ]);
 });

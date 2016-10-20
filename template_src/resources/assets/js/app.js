@@ -13,42 +13,27 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('cordova-logo', require('./components/CordovaLogo.vue'));
+
+import { eventHub } from './eventHub';
 
 const app = new Vue({
-    el: '#app'
-});
-
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
+    el: '#app',
+    created: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+    destroyed: function() {
+        document.removeEventListener('deviceready', this.onDeviceReady, false);
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    methods: {
+        onDeviceReady: function() {
+            app.receivedEvent('deviceready');
+        },
+        // Broadcast deviceready event to all vue components using eventHub
+        receivedEvent: function(id) {
+            eventHub.$emit('deviceready');
+        }
     }
-};
+});
 
-app.initialize();
+
